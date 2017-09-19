@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+        "devices-get": {
+            "matchCondition": {
+                "route": "/api/devices",
+                "methods": [
+                    "GET"
+                ]
+            },
+            "backendUri": "https://%WEBSITE_HOSTNAME%/device_list"
+        },
+        "device-by-id": {
+            "matchCondition": {
+                "route": "/api/device/{id}",
+                "methods": [
+                    "GET"
+                ]
+            },
+            "backendUri": "https://%WEBSITE_HOSTNAME%/device_list_by_id?id={id}"
+        },
+        "device-add": {
+            "matchCondition": {
+                "route": "/api/device",
+                "methods": [
+                    "POST"
+                ]
+            },
+            "backendUri": "https://%WEBSITE_HOSTNAME%/device_add"
+        },
+        "device-approve": {
+            "matchCondition": {
+                "route": "/api/device",
+                "methods": [
+                    "PUT"
+                ]
+            },
+            "backendUri": "https://%WEBSITE_HOSTNAME%/device_approve"
+        }
+    }
+}
