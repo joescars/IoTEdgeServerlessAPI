@@ -1,16 +1,17 @@
+var MongoClient = require('mongodb').MongoClient;
+var url = process.env.MyAccount_COSMOSDB;
+
 module.exports = function (context, req) {
-    context.log('devices Triggered');
+    MongoClient.connect(url, function (err, db) {
+        db.collection('devices').find().toArray(function (err, devices) {
+            context.res = {
+                status: 200,
+                body: devices.map(d => ({ id: d.id, name: d.name, approved: d.approved })),
+                headers: { 'Access-Control-Allow-Origin': '*' }
+            };
+            context.done();
+            db.close();
+        });
 
-    // Return all the devices that we have
-    let result = [];
-    for (let i = 1; i <= 10; i++)
-    result.push({id:i, name:'Device ' + i, approved: (Math.random() >= 0.5)})
-
-    context.res = {
-        status: 200,
-        body: result,
-        headers: {'Access-Control-Allow-Origin':'*'}
-    };
-    context.done();
-
+    });
 };
