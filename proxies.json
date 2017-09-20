@@ -8,7 +8,7 @@
                     "GET"
                 ]
             },
-            "backendUri": "https://%WEBSITE_HOSTNAME%/device_list"
+            "backendUri": "https://%WEBSITE_HOSTNAME%/get-devices"
         },
         "device-by-id": {
             "matchCondition": {
