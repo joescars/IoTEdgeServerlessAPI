@@ -10,6 +10,7 @@ module.exports = function (context, req) {
         let device = req.body;
 
         device.id = guid();
+        device.approved = "false";
 
         // TODO: data validation
         MongoClient.connect(url, function(err, db) {
