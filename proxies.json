@@ -1,7 +1,7 @@
 {
     "$schema": "http://json.schemastore.org/proxies",
     "proxies": {
-        "devices-get": {
+        "get-devices": {
             "matchCondition": {
                 "route": "/api/devices",
                 "methods": [
@@ -10,7 +10,7 @@
             },
             "backendUri": "https://%WEBSITE_HOSTNAME%/get-devices"
         },
-        "devices-get-approved": {
+        "get-approved-devices": {
             "matchCondition": {
                 "route": "/api/devices/approved",
                 "methods": [
@@ -19,7 +19,7 @@
             },
             "backendUri": "https://%WEBSITE_HOSTNAME%/get-devices?approved=true"
         },     
-        "devices-get-unapproved": {
+        "get-unapproved-devices": {
             "matchCondition": {
                 "route": "/api/devices/unapproved",
                 "methods": [
@@ -28,7 +28,7 @@
             },
             "backendUri": "https://%WEBSITE_HOSTNAME%/get-devices?approved=false"
         },           
-        "device-by-id": {
+        "get-device": {
             "matchCondition": {
                 "route": "/api/device/{id}",
                 "methods": [
@@ -37,7 +37,7 @@
             },
             "backendUri": "https://%WEBSITE_HOSTNAME%/get-device?id={id}"
         },
-        "device-add": {
+        "add-device": {
             "matchCondition": {
                 "route": "/api/device",
                 "methods": [
@@ -46,7 +46,7 @@
             },
             "backendUri": "https://%WEBSITE_HOSTNAME%/post-device"
         },
-        "device-approve": {
+        "put-device": {
             "matchCondition": {
                 "route": "/api/device",
                 "methods": [
