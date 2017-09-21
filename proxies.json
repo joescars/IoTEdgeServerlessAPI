@@ -17,7 +17,7 @@
                     "GET"
                 ]
             },
-            "backendUri": "https://%WEBSITE_HOSTNAME%/device_list_by_id?id={id}"
+            "backendUri": "https://%WEBSITE_HOSTNAME%/get-device?id={id}"
         },
         "device-add": {
             "matchCondition": {
