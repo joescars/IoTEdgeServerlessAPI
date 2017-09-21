@@ -54,6 +54,12 @@
                 ]
             },
             "backendUri": "https://%WEBSITE_HOSTNAME%/put-device"
-        }
+        },
+        "root": {
+            "matchCondition": {
+                "route": "/{restOfPath}"
+            },
+            "backendUri": "https://%mycontainer_uri%/client/{restOfPath}"
+        }        
     }
 }
