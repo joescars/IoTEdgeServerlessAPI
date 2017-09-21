@@ -26,7 +26,7 @@
                     "POST"
                 ]
             },
-            "backendUri": "https://%WEBSITE_HOSTNAME%/device_add"
+            "backendUri": "https://%WEBSITE_HOSTNAME%/post-device"
         },
         "device-approve": {
             "matchCondition": {
@@ -35,7 +35,7 @@
                     "PUT"
                 ]
             },
-            "backendUri": "https://%WEBSITE_HOSTNAME%/device_approve"
+            "backendUri": "https://%WEBSITE_HOSTNAME%/put-device"
         }
     }
 }
