@@ -7,13 +7,7 @@ module.exports = function (context, req) {
 
     // filter: approve
     if (req.query.approved) {
-        var appr = (req.query.approved == 'true');
-        if(appr) {
-            myQuery = { approved: "true"};
-        }
-        else {
-            myQuery = { approved: "false"};
-        }
+        myQuery = (req.query.approved == 'true') ? ({ approved: "true"}) : ({ approved: "false"});
     }
 
     // connect and get the data
