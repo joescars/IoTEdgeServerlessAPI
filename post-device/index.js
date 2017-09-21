@@ -1,6 +1,4 @@
 var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var ObjectId = require('mongodb').ObjectID;
 var url = process.env.MyAccount_COSMOSDB;
 
 module.exports = function (context, req) {
