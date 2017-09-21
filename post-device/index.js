@@ -10,39 +10,38 @@ module.exports = function (context, req) {
     // Add Device
     if (req.body) {
         let device = req.body;
-        
-        // TODO: look into changing api so we can use binding
-        // context.bindings.out = device;
 
-        // write object to cosmosdb using mongo api
+        device.id = guid();
+
         // TODO: data validation
         MongoClient.connect(url, function(err, db) {
-            assert.equal(null, err);
-            insertDocument(db, device, function() {
+            db.collection('devices').insertOne(device, function(err, result) {
                 db.close();
-                });
+                context.res = {
+                    // status: 200, /* Defaults to 200 */
+                    body: "Device Added With Id: " + device.id
+                };
+                context.done();
             });
+        });
 
-
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Device Added"
-        };
     }
     else {
         context.res = {
             status: 400,
             body: "Please pass a device in."
         };
+        context.done();
     }
-    context.done();
-
+    
 };
 
-var insertDocument = function(db, device, callback) {
-    db.collection('devices').insertOne(device, function(err, result) {
-        assert.equal(err, null);
-        //context.log("Inserted a document into the families collection.");
-        callback();
-    });
-    };
+function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
+}   
