@@ -10,6 +10,24 @@
             },
             "backendUri": "https://%WEBSITE_HOSTNAME%/get-devices"
         },
+        "devices-get-approved": {
+            "matchCondition": {
+                "route": "/api/devices/approved",
+                "methods": [
+                    "GET"
+                ]
+            },
+            "backendUri": "https://%WEBSITE_HOSTNAME%/get-devices?approved=true"
+        },     
+        "devices-get-unapproved": {
+            "matchCondition": {
+                "route": "/api/devices/unapproved",
+                "methods": [
+                    "GET"
+                ]
+            },
+            "backendUri": "https://%WEBSITE_HOSTNAME%/get-devices?approved=false"
+        },           
         "device-by-id": {
             "matchCondition": {
                 "route": "/api/device/{id}",
