@@ -8,7 +8,7 @@
                     "GET"
                 ]
             },
-            "backendUri": "https://%WEBSITE_HOSTNAME%/get-devices"
+            "backendUri": "https://%WEBSITE_HOSTNAME%/func/get-devices"
         },
         "devices-get-approved": {
             "matchCondition": {
@@ -17,7 +17,7 @@
                     "GET"
                 ]
             },
-            "backendUri": "https://%WEBSITE_HOSTNAME%/get-devices?approved=true"
+            "backendUri": "https://%WEBSITE_HOSTNAME%/func/get-devices?approved=true"
         },     
         "devices-get-unapproved": {
             "matchCondition": {
@@ -26,7 +26,7 @@
                     "GET"
                 ]
             },
-            "backendUri": "https://%WEBSITE_HOSTNAME%/get-devices?approved=false"
+            "backendUri": "https://%WEBSITE_HOSTNAME%/func/get-devices?approved=false"
         },           
         "device-by-id": {
             "matchCondition": {
@@ -35,7 +35,7 @@
                     "GET"
                 ]
             },
-            "backendUri": "https://%WEBSITE_HOSTNAME%/get-device?id={id}"
+            "backendUri": "https://%WEBSITE_HOSTNAME%/func/get-device?id={id}"
         },
         "device-add": {
             "matchCondition": {
@@ -44,7 +44,7 @@
                     "POST"
                 ]
             },
-            "backendUri": "https://%WEBSITE_HOSTNAME%/post-device"
+            "backendUri": "https://%WEBSITE_HOSTNAME%/func/post-device"
         },
         "device-approve": {
             "matchCondition": {
@@ -53,7 +53,7 @@
                     "PUT"
                 ]
             },
-            "backendUri": "https://%WEBSITE_HOSTNAME%/put-device"
+            "backendUri": "https://%WEBSITE_HOSTNAME%/func/put-device"
         },
         "root": {
             "matchCondition": {

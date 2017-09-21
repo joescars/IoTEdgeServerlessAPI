@@ -1,6 +1,6 @@
 { 
 	// removed route allowing us to use /api in proxies
 	"http": {
-		"routePrefix":""
+		"routePrefix":"func"
 	}
 }
